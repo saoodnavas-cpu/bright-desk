@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brightdesk Foundation</title>
+<style>
+:root{--bg:#F7F8FC;--surface:#fff;--ink:#16204A;--muted:#4D5578;--brand:#24348C;--on-brand:#fff;--accent:#F2A900;--on-accent:#16204A;--line:#D9DEEE;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1430;--surface:#182046;--ink:#EEF0FA;--muted:#A9B0D0;--brand:#8FA2FF;--on-brand:#0F1430;--accent:#F7B731;--on-accent:#16204A;--line:#2C3566}}
+:root[data-theme="dark"]{--bg:#0F1430;--surface:#182046;--ink:#EEF0FA;--muted:#A9B0D0;--brand:#8FA2FF;--on-brand:#0F1430;--accent:#F7B731;--on-accent:#16204A;--line:#2C3566}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+h1,h2,h3{font-family:"Iowan Old Style","Palatino Linotype",Georgia,serif;line-height:1.15;margin:0 0 .5em;font-weight:700}
+h1{font-size:clamp(2.2rem,6vw,3.9rem);max-width:15ch;letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,4vw,2.4rem)}
+h3{font-size:1.25rem}
+p{margin:0 0 1em;max-width:62ch}
+a{color:var(--brand)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;padding-top:12px;padding-bottom:12px}
+.logo{font-family:Georgia,serif;font-weight:700;font-size:1.15rem;color:var(--ink);text-decoration:none}
+nav{display:flex;gap:20px;flex-wrap:wrap}
+nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:.95rem;padding:4px 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--accent)}
+.btn{display:inline-block;padding:13px 24px;border-radius:6px;font-weight:700;text-decoration:none;background:var(--brand);color:var(--on-brand);border:2px solid var(--brand);cursor:pointer;font-size:1rem;font-family:inherit}
+.btn.alt{background:transparent;color:var(--ink);border-color:var(--ink)}
+.hero{padding:64px 0 56px}
+.hero .wrap{display:grid;gap:40px;grid-template-columns:1.3fr 1fr;align-items:center}
+.hero p.lead{font-size:1.2rem;color:var(--muted)}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.quote{background:var(--accent);color:var(--on-accent);padding:32px 28px;border-radius:4px 40px 4px 40px}
+.quote p{font-family:Georgia,serif;font-size:1.3rem;line-height:1.4;margin-bottom:1em}
+.quote small{font-size:.9rem;font-weight:600}
+.stats{background:var(--brand);color:var(--on-brand)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:32px;padding-bottom:32px}
+.stats b{display:block;font-family:Georgia,serif;font-size:2.2rem;line-height:1.1}
+.stats span{font-size:.95rem}
+section{padding:72px 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.values{list-style:none;margin:0;padding:0}
+.values li{padding:16px 0;border-top:1px solid var(--line)}
+.values li:last-child{border-bottom:1px solid var(--line)}
+.values b{display:block}
+.services{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 48px;margin-top:32px}
+.svc{padding:24px 0;border-top:3px solid var(--accent)}
+.svc p{color:var(--muted);margin:0}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:48px}
+form{display:grid;gap:16px}
+label{font-weight:600;display:grid;gap:6px;font-size:.95rem}
+input,select,textarea{font:inherit;padding:12px;border:1.5px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);width:100%}
+textarea{min-height:120px;resize:vertical}
+#status{margin:0;font-weight:600;color:var(--brand)}
+footer{background:var(--brand);color:var(--on-brand);padding:28px 0;font-size:.95rem}
+footer p{margin:0;max-width:none}
+@media (max-width:760px){
+.hero .wrap,.about-grid,.svc-grid,.contact-grid{grid-template-columns:1fr}
+.stats .wrap{grid-template-columns:1fr 1fr}
+.hero{padding-top:40px}section{padding:52px 0}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<a class="logo" href="#home">💡 Brightdesk Foundation</a>
+<nav aria-label="Main">
+<a href="#home">Home</a><a href="#about">About us</a><a href="#services">Services</a><a href="#contact">Contact</a>
+</nav>
+</div>
+</header>
+
+<main>
+<div id="home" class="hero">
+<div class="wrap">
+<div>
+<h1>Every village school deserves a working computer and a teacher who knows how to use it.</h1>
+<p class="lead">We equip rural classrooms with refurbished computers, train local teachers, and stay for three years so the learning lasts.</p>
+<div class="actions">
+<a class="btn" href="#contact">Sponsor a classroom</a>
+<a class="btn alt" href="#services">See our programs</a>
+</div>
+</div>
+<aside class="quote">
+<p>The children used to be afraid of the keyboard. Now they argue about whose turn it is to type.</p>
+<small>Headmistress, partner school in our first batch</small>
+</aside>
+</div>
+</div>
+
+<div class="stats">
+<div class="wrap">
+<div><b>312</b><span>classrooms equipped</span></div>
+<div><b>640</b><span>teachers trained</span></div>
+<div><b>48,000</b><span>students reached</span></div>
+<div><b>3 years</b><span>of follow-up per school</span></div>
+</div>
+</div>
+
+<section id="about">
+<div class="wrap about-grid">
+<div>
+<h2>About us</h2>
+<p>Brightdesk Foundation started in 2016 when a group of retired engineers and school teachers noticed the same thing: donated computers sat locked in cupboards because nobody had time to learn them.</p>
+<p>So we changed the model. We don't drop off equipment. We pair every classroom with a trained teacher, a repair plan, and a mentor who visits each term.</p>
+<p><b>Our mission:</b> make digital learning an ordinary part of every school day, in every language the children speak.</p>
+</div>
+<ul class="values">
+<li><b>Teachers first</b>A computer helps only when the person in front of the class is confident with it.</li>
+<li><b>Refurbish, don't discard</b>Every machine we install is a donated laptop or desktop given a second life.</li>
+<li><b>Stay long enough</b>We measure our work after three years, not on installation day.</li>
+<li><b>Local languages</b>All lessons and guides are written with local teachers in the medium they teach.</li>
+</ul>
+</div>
+</section>
+
+<section id="services" class="services">
+<div class="wrap">
+<h2>Services</h2>
+<p>Four programs that work together. Schools can join one or all.</p>
+<div class="svc-grid">
+<div class="svc"><h3>Digital classroom setup</h3><p>Refurbished computers, power backup and a simple lab layout, installed and tested by our technicians.</p></div>
+<div class="svc"><h3>Teacher training</h3><p>A 12-week course taught in short evening sessions, ending with each teacher running a real lesson.</p></div>
+<div class="svc"><h3>Student skill clubs</h3><p>Weekly clubs for ages 11 to 16 covering typing, safe internet use, basic coding and making presentations.</p></div>
+<div class="svc"><h3>Community learning hours</h3><p>Evening and weekend access for parents and youth to learn forms, banking apps and job applications.</p></div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="wrap contact-grid">
+<div>
+<h2>Contact</h2>
+<p>Want to bring your school into the program, donate old laptops, or volunteer as a mentor? Send us a note and we will reply within two working days.</p>
+<p><b>Email:</b> <a href="mailto:saoodnavas@gmail.com">saoodnavas@gmail.com</a><br><b>Phone:</b> +00 000 000 0000<br><b>Hours:</b> Monday to Saturday, 9 am to 5 pm</p>
+</div>
+<form id="f" novalidate>
+<label>Your name<input name="name" autocomplete="name" required></label>
+<label>Email<input type="email" name="email" autocomplete="email" required></label>
+<label>I would like to
+<select name="topic"><option>Join as a partner school</option><option>Donate laptops</option><option>Sponsor a classroom</option><option>Volunteer as a mentor</option></select>
+</label>
+<label>Message<textarea name="msg"></textarea></label>
+<button class="btn" type="submit">Send message</button>
+<p id="status" role="status" aria-live="polite"></p>
+</form>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap"><p>© 2026 Brightdesk Foundation. A concept website created for a website-generation assignment; all names and numbers are sample content.</p></div>
+</footer>
+
+<script>
+var f=document.getElementById('f'),s=document.getElementById('status'),TO='saoodnavas@gmail.com';
+f.addEventListener('submit',function(e){
+e.preventDefault();
+var n=f.name.value.trim(),m=f.email.value.trim(),t=f.topic.value,b=f.msg.value.trim();
+if(!n||m.indexOf('@')<1){s.textContent='Please enter your name and a valid email address.';return;}
+var btn=f.querySelector('button');btn.disabled=true;s.textContent='Sending...';
+var subject='Website enquiry: '+t;
+fetch('https://formsubmit.co/ajax/'+TO,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({name:n,email:m,topic:t,message:b,_subject:subject})})
+.then(function(r){if(!r.ok)throw 0;return r.json();})
+.then(function(){s.textContent='Thank you, '+n+'. Your message has been sent. We will reply within two working days.';f.reset();})
+.catch(function(){
+var link='mailto:'+TO+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent('Name: '+n+'\nEmail: '+m+'\n\n'+b);
+s.innerHTML='We could not send this directly. <a href="'+link+'">Send it from your email app instead</a>.';
+}).finally(function(){btn.disabled=false;});
+});
+</script>
+</body>
+</html>
